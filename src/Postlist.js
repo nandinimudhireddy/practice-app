@@ -1,10 +1,11 @@
-const Postlist = ({ posts }) => {
+const Postlist = ({ posts, title, handleDelete }) => {
   return (
     <div>
+      <h1>{title}</h1>
       {posts.map((posts) => (
         <div className="postpreview" key={posts.id}>
-          <h1>{posts.title}</h1>
-          <h2>Written by {posts.author}</h2>
+          <h2>{posts.title}</h2>
+          <h3>Written by {posts.author}</h3>
           <button
             onClick={() => {
               handleDelete(posts.id);
@@ -14,7 +15,6 @@ const Postlist = ({ posts }) => {
           </button>
         </div>
       ))}
-      ;
     </div>
   );
 };

@@ -9,15 +9,15 @@ const Home = (props) => {
   ]);
 
   const handleDelete = (id) => {
-    const newPosts = posts.filter((post) => post.id !== id);
+    const newPosts = posts.filter(post => post.id !== id);
     setPosts(newPosts);
   };
 
   return (
     <div className="home">
-      <Postlist posts={posts} handleDelete={handleDelete} />
+      <Postlist posts={posts} title ="All articles!" handleDelete={handleDelete} />
     </div>
   );
-};
+}
 
 export default Home;
