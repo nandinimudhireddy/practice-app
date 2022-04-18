@@ -1,23 +1,37 @@
 import Postlist from "./Postlist";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Home = (props) => {
-  const [posts, setPosts] = useState([
-    { title: "Digital Markrting", author: "Nandu", id: 1 },
-    { title: "Tech queries", author: "Nandy", id: 2 },
-    { title: "General stuff", author: "Nandu", id: 3 },
-  ]);
+  const [posts, setPosts] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/posts")
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        setPosts(data);
+      });
+  }, []);
+ 
 
   const handleDelete = (id) => {
     const newPosts = posts.filter(post => post.id !== id);
     setPosts(newPosts);
   };
-
+  
   return (
     <div className="home">
-      <Postlist posts={posts} title ="All articles!" handleDelete={handleDelete} />
+      {posts && (
+        <Postlist
+          posts={posts}
+          title="All articles!"
+          handleDelete={handleDelete}
+        />
+      )}
     </div>
   );
-}
+};
 
 export default Home;
