@@ -1,4 +1,4 @@
-const Postlist = ({ posts }) => {
+const Postlist = ({ posts, handleDelete }) => {
   return (
     <div>
       {posts.map((posts) => (
