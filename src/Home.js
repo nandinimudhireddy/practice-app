@@ -1,36 +1,20 @@
 import Postlist from "./Postlist";
-import { useEffect, useState } from "react";
+import useFetch from "./useFetch";
 
-const Home = (props) => {
-  const [posts, setPosts] = useState(null);
-
-  useEffect(() => {
-    fetch("http://localhost:8000/posts")
-      .then((res) => {
-        return res.json();
-      })
-      .then((data) => {
-        console.log(data);
-        setPosts(data);
-      });
-  }, []);
- 
-
-  const handleDelete = (id) => {
-    const newPosts = posts.filter(post => post.id !== id);
-    setPosts(newPosts);
-  };
+const Home = () => {
+  const {
+    data: posts,
+    isloading,
+    error,
+  } = useFetch('http://localhost:8000/posts');
   
   return (
     <div className="home">
-      {posts && (
-        <Postlist
-          posts={posts}
-          title="All articles!"
-          handleDelete={handleDelete}
-        />
-      )}
+      {error && <div>{error}</div>}
+      {isloading && <div>Loading..</div>}
+      {posts && <Postlist posts={posts} title="All articles!" />}
     </div>
+    
   );
 };
 
