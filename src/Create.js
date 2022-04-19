@@ -6,7 +6,7 @@ const Create = () => {
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("Nandu");
   const [ispending, setIspending] = useState(false);
-  const navigate = useNavigate('');
+  const navigate = useNavigate("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,10 +16,10 @@ const Create = () => {
       method: "POST",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(post),
-    }).then(()=>{
+    }).then(() => {
       setIspending(false);
-      navigate('/');
-    })
+      navigate("/");
+    });
     console.log(post);
   };
 

@@ -1,6 +1,4 @@
-import {Link} from 'react-router-dom'
-
-const Postlist = ({ posts, title,}) => {
+const Postlist = ({ posts, handleDelete }) => {
   return (
     <div>
       <h1>{title}</h1>
