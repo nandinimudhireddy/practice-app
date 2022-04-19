@@ -13,12 +13,11 @@ const PostDetails = () => {
 
   const handleDelete = () => {
     fetch("http://localhost:8000/posts/" + posts.id, {
-      method: 'DELETE',
+      method: "DELETE",
     }).then(() => {
       navigate("/");
     });
   };
-
   return (
     <div className="postdetails">
       {isLoading && <div>Loading..</div>}
