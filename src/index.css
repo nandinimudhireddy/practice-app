@@ -49,13 +49,61 @@ button:hover {
   box-shadow: 2px 2px 4px #9f9c9c;
   color: white;
 }
-.postpreview{
-  margin:8px;
-  
+.postpreview {
+  margin: 8px;
+  padding: 5px;
 }
-.postpreview:hover{
+.postpreview:hover {
   box-shadow: 2px 2px 2px 2px #9f9c9c;
 }
-.postpreview h2{
-  color:#f1356d;
+.postpreview h2 {
+  color: #f1356d;
+  margin: 4px;
+}
+.postpreview a {
+  text-decoration: none;
+}
+.postdetails h2 {
+  margin-bottom: 10px;
+  color: #f1356d;
+  font-size: 25px;
+}
+.postdetails div {
+  margin: 20px 0;
+}
+.form {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.form label {
+  text-align: left;
+  display: block;
+  color: #f1356d;
+}
+.form input,
+textarea,
+select {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+.form button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.postdetails button {
+  background: #f1356d;
+  color: #fff;
+  border: 0;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
 }

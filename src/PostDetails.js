@@ -19,6 +19,7 @@ const PostDetails = () => {
     });
   };
 
+
   return (
     <div className="postdetails">
       {isLoading && <div>Loading..</div>}
